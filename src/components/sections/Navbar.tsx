@@ -33,14 +33,14 @@ export function Navbar() {
         if (currentY > lastScrollY.current + 10) {
           gsap.to(headerRef.current, {
             y: -120,
-            duration: 0.4,
+            duration: 0.3,
             ease: "power2.inOut",
             overwrite: true,
           });
         } else if (currentY < lastScrollY.current - 5) {
           gsap.to(headerRef.current, {
             y: 0,
-            duration: 0.35,
+            duration: 0.28,
             ease: "power2.out",
             overwrite: true,
           });
@@ -48,7 +48,7 @@ export function Navbar() {
       } else if (headerRef.current) {
         gsap.to(headerRef.current, {
           y: 0,
-          duration: 0.3,
+          duration: 0.24,
           ease: "power2.out",
           overwrite: true,
         });
@@ -62,7 +62,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+    <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
       <div
         className={cn(
           "site-shell rounded-full border transition-all duration-500",
@@ -71,37 +71,37 @@ export function Navbar() {
             : "border-border/60 bg-background/68 backdrop-blur-lg",
         )}
       >
-        <div className="flex items-center justify-between px-5 py-3 sm:px-6">
+        <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-5 xl:px-6">
           <a href="#hero" className="min-w-0">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-foreground/[0.04] text-sm font-semibold text-foreground">
                 MP
               </div>
-              <div className="hidden min-w-0 sm:block">
+              <div className="hidden min-w-0 md:block">
                 <p className="truncate text-sm font-semibold text-foreground">{profile.name}</p>
                 <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">{profile.title}</p>
               </div>
             </div>
           </a>
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-0.5 xl:flex 2xl:gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm text-muted-foreground transition duration-300 hover:bg-foreground/6 hover:text-foreground"
+                className="rounded-full px-3 py-2 text-sm text-muted-foreground transition duration-300 hover:bg-foreground/6 hover:text-foreground 2xl:px-4"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 md:flex">
-            <ThemeToggle />
+          <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
+            <ThemeToggle className="shrink-0" />
             <Button
               asChild
               variant="ghost"
-              className="rounded-full border border-border/70 bg-background/72 px-5 text-foreground hover:bg-foreground/6 hover:text-foreground"
+              className="shrink-0 rounded-full border border-border/70 bg-background/72 px-4 text-foreground hover:bg-foreground/6 hover:text-foreground 2xl:px-5"
             >
               <a href={resumeHref} download>
                 Resume
@@ -113,7 +113,7 @@ export function Navbar() {
           <button
             type="button"
             aria-label="Toggle navigation"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-background/72 text-foreground md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-background/72 text-foreground xl:hidden"
             onClick={() => setMobileOpen((open) => !open)}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -122,7 +122,7 @@ export function Navbar() {
 
         <div
           className={cn(
-            "overflow-hidden px-4 transition-all duration-300 md:hidden",
+            "overflow-hidden px-4 transition-all duration-300 xl:hidden",
             mobileOpen ? "max-h-80 pb-4 opacity-100" : "max-h-0 pb-0 opacity-0",
           )}
         >

@@ -37,7 +37,7 @@ export function ThemeToggle({ className }: { className?: string }) {
             type="button"
             onClick={() => setTheme(option.value)}
             className={cn(
-              "inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-medium tracking-[0.18em] transition duration-300",
+              "inline-flex items-center gap-2 rounded-full px-2.5 py-2 text-[11px] font-medium tracking-[0.16em] transition duration-300 sm:px-3 sm:text-xs sm:tracking-[0.18em]",
               isActive
                 ? "bg-foreground text-background shadow-sm"
                 : "text-muted-foreground hover:bg-foreground/6 hover:text-foreground",
@@ -46,7 +46,7 @@ export function ThemeToggle({ className }: { className?: string }) {
             title={`${option.label} theme${option.value === "system" ? ` (${resolvedTheme})` : ""}`}
           >
             <Icon className="h-3.5 w-3.5" />
-            <span className="hidden sm:inline">{option.label}</span>
+            <span className="hidden 2xl:inline">{option.label}</span>
           </button>
         );
       })}

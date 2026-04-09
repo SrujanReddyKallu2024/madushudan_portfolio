@@ -41,11 +41,11 @@ export function Contact() {
       const links = linksRef.current?.querySelectorAll(".contact-link");
       if (links?.length) {
         gsap.from(links, {
-          x: -40,
+          x: -24,
           opacity: 0,
-          stagger: 0.1,
-          duration: 0.7,
-          ease: "power3.out",
+          stagger: 0.08,
+          duration: 0.52,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: linksRef.current,
             start: "top 82%",
@@ -56,11 +56,11 @@ export function Contact() {
       // Education cards stagger
       if (eduRef.current) {
         gsap.from(eduRef.current.children, {
-          y: 40,
+          y: 24,
           opacity: 0,
-          stagger: 0.12,
-          duration: 0.8,
-          ease: "power3.out",
+          stagger: 0.1,
+          duration: 0.58,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: eduRef.current,
             start: "top 85%",

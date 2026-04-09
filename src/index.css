@@ -108,12 +108,12 @@
   }
 
   .site-shell {
-    width: min(98.5vw, 1920px);
+    width: min(calc(100vw - clamp(28px, 4vw, 88px)), 1580px);
     margin-inline: auto;
   }
 
   .site-shell-tight {
-    width: min(97.5vw, 1760px);
+    width: min(calc(100vw - clamp(32px, 5vw, 112px)), 1460px);
     margin-inline: auto;
   }
 }

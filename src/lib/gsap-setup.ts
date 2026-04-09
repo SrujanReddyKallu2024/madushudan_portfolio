@@ -10,7 +10,7 @@ export function initSmoothScroll() {
   if (lenisInstance) return lenisInstance;
 
   const lenis = new Lenis({
-    lerp: 0.08,
+    lerp: 0.12,
     smoothWheel: true,
   });
 

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { LiveDashboard } from "@/components/ui/live-dashboard";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { SplineScene } from "@/components/ui/splite";
+import { TextScramble } from "@/components/ui/text-scramble";
 import { Reveal } from "@/components/ui/reveal";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { dashboardMetrics, profile, resumeHref } from "@/lib/portfolio-data";
@@ -15,102 +16,99 @@ import { gsap } from "@/lib/gsap-setup";
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const nameRef = useRef<HTMLHeadingElement>(null);
   const taglineRef = useRef<HTMLHeadingElement>(null);
   const robotRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const nameWrapRef = useRef<HTMLDivElement>(null);
   const metricsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const nameChars = nameRef.current?.querySelectorAll(".char");
-      if (nameChars?.length) {
-        gsap.from(nameChars, {
-          y: 72,
+      if (nameWrapRef.current) {
+        gsap.from(nameWrapRef.current, {
+          y: 28,
           opacity: 0,
-          rotateX: -90,
-          stagger: 0.03,
-          duration: 1,
-          ease: "power3.out",
-          delay: 0.16,
+          duration: 0.58,
+          ease: "power2.out",
+          delay: 0.08,
         });
       }
 
       if (badgeRef.current) {
         gsap.from(badgeRef.current, {
-          y: 24,
+          y: 18,
           opacity: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: 0.08,
+          duration: 0.52,
+          ease: "power2.out",
+          delay: 0.04,
         });
       }
 
       const taglineWords = taglineRef.current?.querySelectorAll(".word");
       if (taglineWords?.length) {
         gsap.from(taglineWords, {
-          y: 36,
+          y: 24,
           opacity: 0,
-          stagger: 0.045,
-          duration: 0.82,
-          ease: "power3.out",
-          delay: 0.54,
+          stagger: 0.03,
+          duration: 0.56,
+          ease: "power2.out",
+          delay: 0.28,
         });
       }
 
       if (summaryRef.current) {
         gsap.from(summaryRef.current, {
-          y: 24,
+          y: 20,
           opacity: 0,
-          duration: 0.75,
-          ease: "power3.out",
-          delay: 0.82,
+          duration: 0.56,
+          ease: "power2.out",
+          delay: 0.36,
         });
       }
 
       if (ctaRef.current) {
         gsap.from(ctaRef.current.children, {
-          y: 18,
+          y: 14,
           opacity: 0,
-          stagger: 0.1,
-          duration: 0.68,
-          ease: "power3.out",
-          delay: 0.98,
+          stagger: 0.08,
+          duration: 0.48,
+          ease: "power2.out",
+          delay: 0.42,
         });
       }
 
       if (metricsRef.current) {
         gsap.from(metricsRef.current.children, {
-          y: 24,
+          y: 18,
           opacity: 0,
-          stagger: 0.08,
-          duration: 0.72,
-          ease: "power3.out",
-          delay: 1.08,
+          stagger: 0.06,
+          duration: 0.52,
+          ease: "power2.out",
+          delay: 0.48,
         });
       }
 
       if (robotRef.current) {
         gsap.from(robotRef.current, {
-          x: 72,
+          x: 56,
           opacity: 0,
-          duration: 1.1,
-          ease: "power3.out",
-          delay: 0.34,
+          duration: 0.8,
+          ease: "power2.out",
+          delay: 0.12,
         });
       }
 
       if (robotRef.current && sectionRef.current) {
         gsap.to(robotRef.current, {
-          y: -72,
+          y: -36,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
             end: "bottom top",
-            scrub: 1.1,
+            scrub: 0.55,
           },
         });
       }
@@ -118,13 +116,13 @@ export function Hero() {
       const textCol = sectionRef.current?.querySelector(".hero-text-col");
       if (textCol && sectionRef.current) {
         gsap.to(textCol, {
-          y: -34,
+          y: -20,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
             end: "bottom top",
-            scrub: 0.85,
+            scrub: 0.45,
           },
         });
       }
@@ -132,16 +130,6 @@ export function Hero() {
 
     return () => ctx.revert();
   }, []);
-
-  const nameChars = profile.name.split("").map((char, i) => (
-    <span
-      key={i}
-      className="char inline-block"
-      style={{ display: char === " " ? "inline" : undefined }}
-    >
-      {char === " " ? "\u00A0" : char}
-    </span>
-  ));
 
   const taglineWords = "Turning complex data into dashboards people actually trust."
     .split(" ")
@@ -152,15 +140,19 @@ export function Hero() {
     ));
 
   return (
-    <section ref={sectionRef} id="hero" className="relative overflow-hidden px-2 pb-2 pt-24 sm:px-3 sm:pt-28">
+    <section
+      ref={sectionRef}
+      id="hero"
+      className="relative overflow-hidden px-2 pb-4 pt-[7.75rem] sm:px-3 sm:pt-[8.5rem] lg:pb-6 xl:pt-[8.75rem]"
+    >
       <BackgroundPaths
         className="inset-x-[-18%] inset-y-[-18%] -z-10"
         overlayClassName="opacity-[0.72] dark:opacity-[0.82] [mask-image:radial-gradient(circle_at_center,black_0%,black_58%,transparent_100%)]"
       />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_24%_28%,hsl(var(--accent)/0.12),transparent_26%),radial-gradient(circle_at_72%_38%,hsl(var(--foreground)/0.07),transparent_32%)] dark:bg-[radial-gradient(circle_at_24%_28%,hsl(var(--accent)/0.14),transparent_24%),radial-gradient(circle_at_72%_38%,hsl(var(--foreground)/0.08),transparent_30%)]" />
 
-      <div className="site-shell relative z-10 grid min-h-[calc(100vh-6.5rem)] items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
-        <div className="hero-text-col relative z-10 min-w-0 max-w-[42rem] lg:pr-2">
+      <div className="site-shell relative z-10 grid min-h-[calc(100vh-8rem)] items-start gap-8 xl:grid-cols-[minmax(0,0.84fr)_minmax(420px,1.16fr)] xl:items-center xl:gap-12">
+        <div className="hero-text-col relative z-10 min-w-0 max-w-[38rem] xl:max-w-[39rem]">
           <div ref={badgeRef} className="mb-4 flex flex-wrap items-center gap-3">
             <Badge
               variant="outline"
@@ -179,27 +171,38 @@ export function Hero() {
               Data analyst / reporting / machine learning
             </p>
 
-            <h1
-              ref={nameRef}
-              className="font-display text-[clamp(3.15rem,6.2vw,6.35rem)] leading-[0.9] tracking-tight text-foreground"
-              style={{ perspective: "600px" }}
-            >
-              {nameChars}
-            </h1>
+            <div ref={nameWrapRef} className="space-y-0.5">
+              <TextScramble
+                as="h1"
+                duration={1}
+                speed={0.028}
+                className="font-display text-[clamp(3rem,4.5vw,5rem)] leading-[0.9] tracking-tight text-foreground whitespace-nowrap"
+              >
+                {profile.firstName}
+              </TextScramble>
+              <TextScramble
+                as="p"
+                duration={1.08}
+                speed={0.028}
+                className="font-display text-[clamp(3rem,4.5vw,5rem)] leading-[0.9] tracking-tight text-foreground whitespace-nowrap"
+              >
+                {profile.lastName}
+              </TextScramble>
+            </div>
 
             <h2
               ref={taglineRef}
-              className="mt-4 max-w-[14ch] text-[clamp(1.65rem,2.9vw,2.95rem)] leading-[1.06] tracking-tight text-accent [text-shadow:0_1px_0_hsl(var(--background))]"
+              className="mt-5 max-w-[10ch] text-[clamp(1.5rem,2.35vw,2.5rem)] leading-[1.02] tracking-tight text-accent [text-shadow:0_1px_0_hsl(var(--background))]"
             >
               {taglineWords}
             </h2>
           </div>
 
-          <div ref={summaryRef} className="mt-6 max-w-[39rem] space-y-4 text-base leading-7 text-muted-foreground sm:text-[1.05rem] sm:leading-8">
+          <div ref={summaryRef} className="mt-5 max-w-[34rem] space-y-4 text-base leading-7 text-muted-foreground sm:text-[1.02rem] sm:leading-8">
             <p>{profile.summary}</p>
           </div>
 
-          <div ref={ctaRef} className="mt-7 flex flex-col gap-4 sm:flex-row">
+          <div ref={ctaRef} className="mt-6 flex flex-col gap-4 sm:flex-row">
             <Button asChild className="rounded-full px-7 py-6 text-[0.95rem] font-semibold">
               <a href="#dashboard">
                 Explore Dashboard
@@ -218,7 +221,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <div ref={metricsRef} className="mt-9 grid gap-4 sm:grid-cols-3">
+          <div ref={metricsRef} className="mt-8 grid gap-4 sm:grid-cols-3">
             {dashboardMetrics.slice(0, 3).map((metric) => (
               <div
                 key={metric.label}
@@ -233,11 +236,11 @@ export function Hero() {
 
         <div
           ref={robotRef}
-          className="relative min-w-0 min-h-[360px] sm:min-h-[420px] lg:min-h-[640px] xl:min-h-[720px]"
+          className="relative mx-auto min-h-[360px] w-full max-w-[560px] sm:min-h-[440px] xl:min-h-[620px] xl:max-w-none"
         >
           <SplineScene
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-            className="h-full w-full scale-[1.08] lg:scale-[1.18] xl:scale-[1.24]"
+            className="h-full w-full scale-[1] sm:scale-[1.04] xl:scale-[1.12]"
           />
         </div>
       </div>

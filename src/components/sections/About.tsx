@@ -45,10 +45,10 @@ export function About() {
       // Summary paragraph slide in
       if (summaryRef.current) {
         gsap.from(summaryRef.current, {
-          y: 50,
+          y: 34,
           opacity: 0,
-          duration: 1,
-          ease: "power3.out",
+          duration: 0.68,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: summaryRef.current,
             start: "top 82%",
@@ -59,12 +59,12 @@ export function About() {
       // Focus area cards stagger with rotation
       if (cardsRef.current) {
         gsap.from(cardsRef.current.children, {
-          y: 60,
+          y: 36,
           opacity: 0,
-          rotateY: 15,
-          stagger: 0.15,
-          duration: 0.9,
-          ease: "power3.out",
+          rotateY: 10,
+          stagger: 0.1,
+          duration: 0.68,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: cardsRef.current,
             start: "top 82%",
@@ -79,7 +79,7 @@ export function About() {
           scale: 0.6,
           opacity: 0,
           stagger: 0.04,
-          duration: 0.5,
+          duration: 0.38,
           ease: "back.out(2)",
           scrollTrigger: {
             trigger: strengthsRef.current,
@@ -96,8 +96,12 @@ export function About() {
     "I like building analysis that feels stable from the inside out: strong data hygiene, visible logic, and reporting that helps people move faster.";
 
   return (
-    <section ref={sectionRef} id="about" className="px-2 py-[4.5rem] sm:px-3 sm:py-20">
-      <div className="site-shell grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+    <section
+      ref={sectionRef}
+      id="about"
+      className="px-2 py-12 sm:px-3 sm:py-16 lg:-mt-8 lg:py-14 xl:-mt-10 xl:py-16"
+    >
+      <div className="site-shell grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="space-y-8">
           <SectionHeading
             eyebrow="About"

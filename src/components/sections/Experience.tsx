@@ -190,11 +190,11 @@ export function Experience() {
       const mobileCards = sectionRef.current?.querySelectorAll(".experience-mobile-card");
       if (mobileCards?.length) {
         gsap.from(mobileCards, {
-          y: 28,
+          y: 20,
           opacity: 0,
-          stagger: 0.1,
-          duration: 0.7,
-          ease: "power3.out",
+          stagger: 0.08,
+          duration: 0.52,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 72%",
@@ -225,14 +225,14 @@ export function Experience() {
               start: "top top+=84",
               end: () => `+=${stageCount * window.innerHeight * 0.82}`,
               pin: true,
-              scrub: 1,
+              scrub: 0.45,
               anticipatePin: 1,
               invalidateOnRefresh: true,
               snap: slides.length > 1
                 ? {
                     snapTo: (value: number) => gsap.utils.snap(1 / stageCount, value),
-                    duration: { min: 0.1, max: 0.3 },
-                    delay: 0.05,
+                    duration: { min: 0.08, max: 0.2 },
+                    delay: 0.02,
                     ease: "power1.inOut",
                   }
                 : undefined,
@@ -265,8 +265,8 @@ export function Experience() {
                 slide,
                 {
                   autoAlpha: 0,
-                  y: -26,
-                  duration: 1,
+                  y: -18,
+                  duration: 0.72,
                 },
                 index,
               )
@@ -279,7 +279,7 @@ export function Experience() {
                 {
                   autoAlpha: 1,
                   y: 0,
-                  duration: 1,
+                  duration: 0.72,
                 },
                 index,
               );

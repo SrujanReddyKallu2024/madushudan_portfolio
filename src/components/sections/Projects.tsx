@@ -360,11 +360,11 @@ export function Projects() {
       const summaryCards = sectionRef.current?.querySelectorAll(".project-summary-card");
       if (summaryCards?.length) {
         gsap.from(summaryCards, {
-          y: 26,
+          y: 20,
           opacity: 0,
-          stagger: 0.08,
-          duration: 0.7,
-          ease: "power3.out",
+          stagger: 0.06,
+          duration: 0.5,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 76%",
@@ -396,13 +396,13 @@ export function Projects() {
               start: "top top+=84",
               end: () => `+=${stageCount * window.innerHeight * 0.8}`,
               pin: true,
-              scrub: 0.6,
+              scrub: 0.35,
               anticipatePin: 1,
               invalidateOnRefresh: true,
               snap: {
                 snapTo: (value: number) => gsap.utils.snap(1 / stageCount, value),
-                duration: { min: 0.08, max: 0.24 },
-                delay: 0.02,
+                duration: { min: 0.06, max: 0.18 },
+                delay: 0.01,
                 ease: "power1.inOut",
               },
               onUpdate: (self) => {
@@ -432,7 +432,7 @@ export function Projects() {
                   autoAlpha: 0,
                   yPercent: 0,
                   scale: 0.985,
-                  duration: 0.82,
+                  duration: 0.62,
                 },
                 index,
               )
@@ -447,7 +447,7 @@ export function Projects() {
                   autoAlpha: 1,
                   yPercent: 0,
                   scale: 1,
-                  duration: 0.82,
+                  duration: 0.62,
                 },
                 index,
               );
@@ -479,7 +479,7 @@ export function Projects() {
   };
 
   return (
-    <section ref={sectionRef} id="dashboard" className="px-2 pb-16 pt-4 sm:px-3 sm:pb-20">
+    <section ref={sectionRef} id="dashboard" className="px-2 pb-8 pt-4 sm:px-3 sm:pb-10 lg:pb-6">
       <div className="site-shell">
         <SectionHeading
           eyebrow="Projects"
@@ -614,7 +614,7 @@ export function Projects() {
           ))}
         </div>
 
-        <Reveal className="mt-8 grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
+        <Reveal className="mt-6 grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
           <div className="project-summary-card panel-surface rounded-[2rem] p-6">
             <div className="flex items-center justify-between gap-3">
               <div>

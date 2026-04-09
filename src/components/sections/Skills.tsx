@@ -86,7 +86,7 @@ export function Skills() {
                 end: () => (difference > 0 ? `+=${innerPanel.offsetHeight}` : "bottom top"),
                 pinSpacing: false,
                 pin: true,
-                scrub: 0.55,
+                scrub: 0.32,
                 invalidateOnRefresh: true,
               },
             });
@@ -102,8 +102,8 @@ export function Skills() {
             tl.fromTo(
               panel,
               { scale: 1, opacity: 1 },
-              { scale: 0.78, opacity: 0.42, duration: 0.88, ease: "none" },
-            ).to(panel, { opacity: 0, duration: 0.12, ease: "none" });
+              { scale: 0.82, opacity: 0.5, duration: 0.7, ease: "none" },
+            ).to(panel, { opacity: 0, duration: 0.08, ease: "none" });
 
             timelines.push(tl);
           });
