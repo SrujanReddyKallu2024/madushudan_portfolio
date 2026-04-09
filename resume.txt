@@ -1,0 +1,60 @@
+
+1
+
+Automatic Zoom
+Madhusudhan PrakashAlbany, NY | 518-956-5449 | mprakash@albany.edu | LinkedIn
+Professional Summary
+Data Analyst with 5+ years of combined academic and professional experience supporting data-driven decision-making, 
+program evaluation, and reporting. Holds a Master’s degree in Data Science and experienced in data extraction, transformation, 
+aggregation, statistical analysis, data mining, and dashboard development. Strong ability to identify trends, ensure data quality, 
+assess risks, communicate findings through analytical reports and deliver actionable insights using SQL, Python and Excel.
+Analytical & Technical Skills
+• Programming & Analytics: Python, R, SQL, Advanced Excel, Pandas, NumPy, Scikit-learn
+• Statistical Modeling & Data Mining: Statistical Analysis, Predictive Modeling, Classification Models, Data Mining, 
+Trend Analysis, Risk Identification
+• Visualization & Reporting: Charts, Tables, Dashboards, Tableau (academic exposure), Matplotlib, Seaborn, Excel 
+Reporting
+• Data Management & QA: Data Cleaning, Validation, QA/QC Processes, Data Quality Checks, Relational Databases, ETL 
+Concepts
+• Professional Skills: Analytical thinking, Documentation, Communication, Confidential data handling, Stakeholder 
+collaboration
+Professional Experience
+Cognizant Technology Solutions Sep 2023 - Jul 2024
+Programmer Analyst Trainee (Data Analysis & Reporting)
+• Extracted, transformed and aggregated structured data using SQL to support reporting and analytical workflows.
+• Cleaned, validated, and preprocessed datasets, identifying inconsistencies and ensuring high data quality.
+• Conducted QA/QC checks and implemented validation logic to maintain data accuracy and consistency.
+• Analyzed datasets to identify trends, patterns, and key insights for business decision-making.
+• Developed reports and dashboards using Excel and SQL to support operational and  program monitoring.
+• Collaborated with cross-functional teams to integrate data into reporting and analytical pipelines.
+Comp-Soft Technology May 2022 - Aug 2022
+Web Design Intern(Data & Database Support)
+• Supported structured data collection, organization, and storage using relational databases.
+• Implemented validation rules and performed quality checks to ensure data integrity
+• Assisted in organizing datasets and generating reports for operational monitoring.
+Academic & Applied Projects
+Infrastructure & Trend Analysis
+Python, SQL
+• Designed data pipelines to extract, transform, and analyze datsets
+• Performed data validation and trend analysis to identify patterns and performance issues.
+• Developed reports and visualizations to communicate insights..
+IBM Employee Attrition Analysis
+Python, Scikit-learn
+• Built ETL workflows and performed exploratory data analysis (EDA)
+• Developed classification models and evaluated performance using ROC-AUC and accuracy metrics
+Healthcare Stroke Risk Analysis
+R
+• Conducted statistical modeling and identified key risk indicators.
+• Interpreted results and delivered analytical summaries.
+Phishing Website Detection
+Python, SQL
+• Developed machine learning models and performed feature engineering.
+• Applied anomaly detection and evaluated classification performance.
+Education
+University at Albany, SUNY 2024 - Present
+Master of Science, Data Science Albany, NY
+Acharya Institute of Technology 2019 - 2023
+Bachelor of Engineering, Computer Science & Engineering Bengaluru, India
+Certifications
+• 100 Days of Code: The Complete Python Bootcamp
+• The Data Science Course 2022: Complete Data Science Bootcamp

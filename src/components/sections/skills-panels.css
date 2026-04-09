@@ -1,0 +1,40 @@
+.skills-overscroll-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.skills-overscroll-panel {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 6.5rem);
+  overflow: visible;
+}
+
+.skills-overscroll-panel + .skills-overscroll-panel {
+  margin-top: 1rem;
+}
+
+.skills-overscroll-panel-inner {
+  width: 100%;
+  min-height: calc(100vh - 6.5rem);
+  transform-origin: center top;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 1023px) {
+  .skills-overscroll-panel {
+    min-height: auto;
+  }
+
+  .skills-overscroll-panel + .skills-overscroll-panel {
+    margin-top: 1.25rem;
+  }
+
+  .skills-overscroll-panel-inner {
+    min-height: auto;
+  }
+}
